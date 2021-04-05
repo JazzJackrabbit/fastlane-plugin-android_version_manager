@@ -20,9 +20,9 @@ module Fastlane
         version_code = Helper::AndroidVersionManagerHelper.get_version_code_from_gradle_file(file_path, params[:key])
         new_version_code = params[:version_code] || version_code + 1
 
-        if new_version_code <= version_code
-          UI.user_error!("New version code must be greater than the current one")
-        end
+#         if new_version_code <= version_code
+#           UI.user_error!("New version code must be greater than the current one")
+#         end
 
         Helper::AndroidVersionManagerHelper.set_key_value_on_gradle_file(file_path, params[:key], new_version_code)
 
